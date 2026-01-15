@@ -29,9 +29,9 @@
                 <livewire:consultar-precio identificador="dolar_chile" />
             </td>
         </tr>
-    </table>--}}
+    </table>
 
     <livewire:contador-job />
 
-    <!-- <livewire:tablaJuego />  -->
+    <livewire:tablaJuego />  --}}
 @endsection
