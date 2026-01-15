@@ -30,8 +30,8 @@
             </td>
         </tr>
     </table>
-
+    <livewire:tablaJuego />  --}}
     <livewire:contador-job />
 
-    <livewire:tablaJuego />  --}}
+    
 @endsection
