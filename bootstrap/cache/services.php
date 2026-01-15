@@ -26,20 +26,16 @@
     22 => 'Illuminate\\View\\ViewServiceProvider',
     23 => 'BladeUI\\Heroicons\\BladeHeroiconsServiceProvider',
     24 => 'BladeUI\\Icons\\BladeIconsServiceProvider',
-    25 => 'Laravel\\Breeze\\BreezeServiceProvider',
-    26 => 'Laravel\\Pail\\PailServiceProvider',
-    27 => 'Laravel\\Sail\\SailServiceProvider',
-    28 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    29 => 'Livewire\\LivewireServiceProvider',
-    30 => 'Livewire\\Volt\\VoltServiceProvider',
-    31 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
-    32 => 'Carbon\\Laravel\\ServiceProvider',
-    33 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    34 => 'Termwind\\Laravel\\TermwindServiceProvider',
-    35 => 'PowerComponents\\LivewirePowerGrid\\Providers\\PowerGridServiceProvider',
-    36 => 'Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider',
-    37 => 'App\\Providers\\AppServiceProvider',
-    38 => 'App\\Providers\\VoltServiceProvider',
+    25 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    26 => 'Livewire\\LivewireServiceProvider',
+    27 => 'Livewire\\Volt\\VoltServiceProvider',
+    28 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
+    29 => 'Carbon\\Laravel\\ServiceProvider',
+    30 => 'Termwind\\Laravel\\TermwindServiceProvider',
+    31 => 'PowerComponents\\LivewirePowerGrid\\Providers\\PowerGridServiceProvider',
+    32 => 'Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider',
+    33 => 'App\\Providers\\AppServiceProvider',
+    34 => 'App\\Providers\\VoltServiceProvider',
   ),
   'eager' => 
   array (
@@ -55,17 +51,15 @@
     9 => 'Illuminate\\View\\ViewServiceProvider',
     10 => 'BladeUI\\Heroicons\\BladeHeroiconsServiceProvider',
     11 => 'BladeUI\\Icons\\BladeIconsServiceProvider',
-    12 => 'Laravel\\Pail\\PailServiceProvider',
-    13 => 'Livewire\\LivewireServiceProvider',
-    14 => 'Livewire\\Volt\\VoltServiceProvider',
-    15 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
-    16 => 'Carbon\\Laravel\\ServiceProvider',
-    17 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    18 => 'Termwind\\Laravel\\TermwindServiceProvider',
-    19 => 'PowerComponents\\LivewirePowerGrid\\Providers\\PowerGridServiceProvider',
-    20 => 'Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider',
-    21 => 'App\\Providers\\AppServiceProvider',
-    22 => 'App\\Providers\\VoltServiceProvider',
+    12 => 'Livewire\\LivewireServiceProvider',
+    13 => 'Livewire\\Volt\\VoltServiceProvider',
+    14 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
+    15 => 'Carbon\\Laravel\\ServiceProvider',
+    16 => 'Termwind\\Laravel\\TermwindServiceProvider',
+    17 => 'PowerComponents\\LivewirePowerGrid\\Providers\\PowerGridServiceProvider',
+    18 => 'Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider',
+    19 => 'App\\Providers\\AppServiceProvider',
+    20 => 'App\\Providers\\VoltServiceProvider',
   ),
   'deferred' => 
   array (
@@ -219,9 +213,6 @@
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'Illuminate\\Contracts\\Validation\\UncompromisedVerifier' => 'Illuminate\\Validation\\ValidationServiceProvider',
-    'Laravel\\Breeze\\Console\\InstallCommand' => 'Laravel\\Breeze\\BreezeServiceProvider',
-    'Laravel\\Sail\\Console\\InstallCommand' => 'Laravel\\Sail\\SailServiceProvider',
-    'Laravel\\Sail\\Console\\PublishCommand' => 'Laravel\\Sail\\SailServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
   ),
   'when' => 
@@ -263,12 +254,6 @@
     array (
     ),
     'Illuminate\\Validation\\ValidationServiceProvider' => 
-    array (
-    ),
-    'Laravel\\Breeze\\BreezeServiceProvider' => 
-    array (
-    ),
-    'Laravel\\Sail\\SailServiceProvider' => 
     array (
     ),
     'Laravel\\Tinker\\TinkerServiceProvider' => 

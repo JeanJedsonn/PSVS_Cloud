@@ -4,10 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\RegionMonedaController;
 
-
-
-// rutas que requieren autenticacion
-Route::middleware(['auth', 'verified'])->group(function () {    //middleware que se ejecuta antes de mostrar la vista
     Route::get("/", [JuegoController::class, "index"])
         ->name("index");
 
@@ -19,6 +15,10 @@ Route::middleware(['auth', 'verified'])->group(function () {    //middleware que
 
     Route::resource('regionMonedas', RegionMonedaController::class)
         ->except(["show"]);
+
+// rutas que requieren autenticacion
+Route::middleware(['auth', 'verified'])->group(function () {    //middleware que se ejecuta antes de mostrar la vista
+
 });
 // rutas generadas para autenticacion
 require __DIR__ . '/auth.php';
