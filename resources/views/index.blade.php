@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Tabla de precios -->
-    {{--
+    {{--<livewire:tablaJuego />  --}}
     <table>
         <tr>
             <td>
@@ -30,7 +30,7 @@
             </td>
         </tr>
     </table>
-    <livewire:tablaJuego />  --}}
+    
     <livewire:contador-job />
 
     
