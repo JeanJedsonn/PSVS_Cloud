@@ -51,9 +51,10 @@
                             🌐 Regiones y Monedas
                         </a>
                     </li>
+                    {{--  
                     <li class="nav-item">
                         <livewire:logout-button />
-                    </li>
+                    </li>--}}
                 </ul>
             </div>
         </div>
