@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Facades\Excel;
 
 use App\Livewire\PartesTabla\ConBusqueda;
-use App\Livewire\partesTabla\ConOrdenamiento;
-use App\Livewire\partesTabla\ConPaginacion;
-use App\Livewire\partesTabla\ConSeleccion;
+use App\Livewire\PartesTabla\ConOrdenamiento;
+use App\Livewire\PartesTabla\ConPaginacion;
+use App\Livewire\PartesTabla\ConSeleccion;
 
 use App\Services\ConstructorConsultasJuego;
 use App\Services\ActualizadorJuegos;

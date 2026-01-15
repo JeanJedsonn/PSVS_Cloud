@@ -44,7 +44,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <livewire:logout-button />
+                        <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                            @csrf
+                            <button type="submit" class="nav-link btn btn-link text-decoration-none" style="border: none; background: none;">
+                                ❌ Log out
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>
