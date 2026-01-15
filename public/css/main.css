@@ -1,0 +1,388 @@
+:root {
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --purple-color: #9c27b0;
+    --dark-bg: #2c3e50;
+    --darker-bg: #34495e;
+    --light-bg: #f8f9fa;
+    --border-color: #ddd;
+    --text-color: #333;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation */
+.main-nav {
+    background: var(--dark-bg);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo {
+    height: 40px;
+}
+
+.nav-title {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 3px;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--darker-bg);
+}
+
+/* Layout */
+.main-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.2s;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+
+.btn-purple {
+    background-color: var(--purple-color);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.btn-outline:hover {
+    background-color: #e9ecef;
+}
+
+.btn-active {
+    background-color: #e9ecef;
+}
+
+/* Forms */
+.form-control {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+}
+
+/* Toolbar & Actions */
+.toolbar {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.actions-bar {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-bar {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Grid System */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Pagination */
+.pagination-wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.page-btn {
+    padding: 5px 12px;
+    border: 1px solid var(--border-color);
+    background: var(--white);
+    cursor: pointer;
+    border-radius: 3px;
+    min-width: 32px;
+}
+
+.page-btn:hover {
+    background-color: #e9ecef;
+}
+
+.page-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+/* Flash Messages */
+.alert {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* Game Card Component Styles */
+.game-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-header-image {
+    position: relative;
+    padding-top: 100%;
+    /* Square aspect ratio for cover */
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.card-header-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.game-card:hover .card-header-image img {
+    transform: scale(1.05);
+}
+
+.card-checkbox-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.card-checkbox-overlay input {
+    transform: scale(1.3);
+    cursor: pointer;
+    margin: 3px;
+}
+
+.card-body {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+    line-height: 1.3;
+}
+
+.card-platform {
+    font-size: 0.85em;
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.price-list {
+    margin-top: auto;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9em;
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price-region {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.price-region:hover {
+    text-decoration: underline;
+}
+
+.price-value-box {
+    text-align: right;
+}
+
+.price-original {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.price-offer {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.card-actions {
+    padding: 10px 15px;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-sm {
+    padding: 4px 10px;
+    font-size: 0.85em;
+}
+
+/* Helpers */
+.text-center {
+    text-align: center;
+}
+
+.d-none {
+    display: none;
+}
