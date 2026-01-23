@@ -141,15 +141,23 @@ class GuardarJuego
             Log::info($titulo);
             //dd($titulo);
             $temp_juegos_consola = $titulo->where('plataforma', $consulta['consola']);
-            if ($temp_juegos_consola->count() == 1) {
-                #se encontro el juego
-                $juegoExistente = $temp_juegos_consola->first()->id;
-                $actualizarJuego = true;
+            if ($temp_juegos_consola->isEmpty()) {
+                #No se encontraron resultados, por lo que no se creo para esta consola, hay que crearlo
+                #creacion del modelo y asignacion de relaciones
+                Log::info("route:Services/GuardarJuego.php> Guardando juego: {$consulta['titulo']}");
+                $juego->titulo = $consulta['titulo'];
+                $juego->plataforma = $consulta['consola'];
+                $juego->imgLowURL = str_replace("w=1024", 'w=256', $consulta['imagenURL']);
+                $juego->imgURL = $consulta['imagenURL'];
+                $juego->id_sony = $consulta['codigo'];
+                $juego->oferta = $consulta['oferta'] ? 1 : 0;
+
+                $responseJuego = $juego->save();
             }
             else {
                 #Error de integridad, 0 o 2 no son viables para evaluar
                 Log::error("route:Services/GuardarJuego.php> Error de integridad: {$consulta['titulo']} y {$consulta['consola']}");
-                dd("Error de integridad, Existe el titulo y no el ID");
+                dd("Error de integridad, Existe el titulo y no el ID, {$titulo}");
             }
         }
 
