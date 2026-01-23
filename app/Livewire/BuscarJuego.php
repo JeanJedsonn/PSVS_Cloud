@@ -4,6 +4,8 @@ use Livewire\Component;
 use App\Services\BuscadorJuego;                 // Servicio que busca en sony
 use App\Services\GuardarJuego;                  // Servicio que guarda el juego
 
+use function PHPSTORM_META\type;
+
 class BuscarJuego extends Component
 {
     // Campos
@@ -21,6 +23,7 @@ class BuscarJuego extends Component
 
     // se pasa como dependencia a la clase GuardarJuego
     public function guardar(GuardarJuego $guardador, $clave){
+        if(type($clave) != "string") $clave = (string)$clave;
         $guardador->guardar($this->resultados[$clave]);
         unset($this->resultados[$clave]);   // Elimina el juego de los resultados
     }
