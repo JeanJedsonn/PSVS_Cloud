@@ -138,6 +138,8 @@ class GuardarJuego
         #Existe el Titulo pero no el ID: Comparar, pues puede variar la consola
         if($titulo->isNotEmpty() && $idSony->isEmpty()) {
             #se espera encontrar a lo sumo dos juegos en este caso
+            Log::info($titulo);
+            dd($titulo);
             $temp_juegos_consola = $titulo->where('consola', $consulta['consola'])->get();
             if ($temp_juegos_consola->count() == 1) {
                 #se encontro el juego
