@@ -84,4 +84,10 @@ class JuegoController extends Controller
         $juego->delete();
         return redirect()->route('index');
     }
+
+    public function visualizar()
+    {
+        $monedas = \App\Models\Moneda::all();
+        return view('visualizar', compact('monedas'));
+    }
 }

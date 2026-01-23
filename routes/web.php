@@ -18,6 +18,10 @@ Route::middleware(['auth', 'verified'])->group(function () {    //middleware que
 
     Route::resource('regionMonedas', RegionMonedaController::class)
         ->except(["show"]);
+
+    Route::get('/visualizar', [JuegoController::class, 'visualizar'])->name('visualizar');
+    
+    Route::get('/proxy-store', [App\Http\Controllers\ProxyController::class, 'proxy'])->name('proxy.store');
 });
 // rutas generadas para autenticacion
 require __DIR__ . '/auth.php';
