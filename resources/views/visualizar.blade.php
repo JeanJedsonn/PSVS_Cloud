@@ -29,11 +29,10 @@
             </div>
             <div class="card-body p-0">
                 <iframe id="storeFrame"
-                        src="https://store.playstation.com/en-us/pages/latest" 
+                        src="{{ route('proxy.store', ['region' => 'en-us']) }}" 
                         frameborder="0" 
                         class="w-100 h-100" 
                         allow="fullscreen"
-                        referrerpolicy="no-referrer"
                         sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
                 </iframe>
             </div>
@@ -48,15 +47,13 @@
 
             function updateRegion() {
                 const region = select.value;
-                const newUrl = `https://store.playstation.com/${region}/pages/latest`;
+                // Use the proxy route
+                const newUrl = `{{ route('proxy.store') }}?region=${region}`;
                 iframe.src = newUrl;
-                urlDisplay.textContent = newUrl.replace('https://', '');
+                urlDisplay.textContent = `store.playstation.com/${region}/pages/latest`;
             }
 
             select.addEventListener('change', updateRegion);
-            
-            // Initialize with correct default if needed
-            // updateRegion(); 
         });
     </script>
 @endsection
