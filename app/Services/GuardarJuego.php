@@ -34,7 +34,7 @@ class GuardarJuego
 
         } else {
             // ya sea que el codigo o el titulo dierean verdad, hay que cambiar todo
-            Log::info("route:Services/GuardarJuego.php> Actualizando juego: {$consulta['titulo']} e ID {$idSony->id}");
+            Log::info("route:Services/GuardarJuego.php> Actualizando juego: {$consulta['titulo']} e ID {$consulta['codigo']}");
             $responseJuego = $idSony->update([
                 'titulo' => $consulta['titulo'],
                 'id_sony' => $consulta['codigo'],
