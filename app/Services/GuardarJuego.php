@@ -139,7 +139,7 @@ class GuardarJuego
         if($titulo->isNotEmpty() && $idSony->isEmpty()) {
             #se espera encontrar a lo sumo dos juegos en este caso
             Log::info($titulo);
-            dd($titulo);
+            //dd($titulo);
             $temp_juegos_consola = $titulo->where('plataforma', $consulta['consola']);
             if ($temp_juegos_consola->count() == 1) {
                 #se encontro el juego
