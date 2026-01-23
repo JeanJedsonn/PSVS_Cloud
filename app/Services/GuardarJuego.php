@@ -107,7 +107,7 @@ class GuardarJuego
                 }
                 else{
                     #se encontro la asociacion, se requiere actualizar el juego
-                    $juegoExistente = $temp_juegos_titulo->first()->id;
+                    $juegoExistente = $temp_juegos_titulo->first();
                     $actualizarJuego = true;
                 }
 
@@ -122,7 +122,7 @@ class GuardarJuego
                 }
                 else{
                     #se encontro la asociacion, se requiere actualizar el juego
-                    $juegoExistente = $temp_juegos_titulo->first()->id;
+                    $juegoExistente = $temp_juegos_titulo->first();
                     $actualizarJuego = true;
                 }
             }
@@ -137,6 +137,7 @@ class GuardarJuego
         
         #Existe el Titulo pero no el ID: Comparar, pues puede variar la consola
         if($titulo->isNotEmpty() && $idSony->isEmpty()) {
+            #caso poppy, tienen el mismo titulo pero diferente plataforma y codigo
             #se espera encontrar a lo sumo dos juegos en este caso
             Log::info($titulo);
             //dd($titulo);
@@ -163,9 +164,33 @@ class GuardarJuego
 
         #No existe el titulo pero si el ID: aunque se compare la consola, no se garantiza que sea el juego
         if($titulo->isEmpty() && $idSony->isNotEmpty()) {
-            #error de integridad, no hay datos para comparar este caso
-            Log::error("route:Services/GuardarJuego.php> Error de integridad: {$consulta['titulo']} y ID {$idSony}");
-            dd("Error de integridad, no existe el titulo pero si el ID, {$idSony}");
+            #Caso hogwarts, tienen el mismo codigo y titulo similar, pero plataforma diferente
+            if ($idSony->count() == 1) {
+                if ($idSony->first()->plataforma != $consulta['consola']) {
+                    #no existe el juego, se puede crear
+                    Log::info("route:Services/GuardarJuego.php> Guardando juego: {$consulta['titulo']}");
+                    $juego->titulo = $consulta['titulo'];
+                    $juego->plataforma = $consulta['consola'];
+                    $juego->imgLowURL = str_replace("w=1024", 'w=256', $consulta['imagenURL']);
+                    $juego->imgURL = $consulta['imagenURL'];
+                    $juego->id_sony = $consulta['codigo'];
+                    $juego->oferta = $consulta['oferta'] ? 1 : 0;
+
+                    $responseJuego = $juego->save();
+                }
+            }
+            else {
+                #si hay mas de un id, puede que se tenga que actualizar
+                if ($idSony->where('plataforma', $consulta['consola'])->count() == 1) {
+                    $juegoExistente = $idSony->where('plataforma', $consulta['consola'])->first();
+                    $actualizarJuego = true;
+                }
+                else {
+                    #Error de integridad, 0 o 2 no son viables para evaluar
+                    Log::error("route:Services/GuardarJuego.php> Error de integridad: {$consulta['titulo']} y {$consulta['consola']}");
+                    dd("Error de integridad, Existe el ID y no el titulo, {$idSony} y {$titulo}");
+                }
+            }
         }
 
         #No existe el Titulo ni el ID: El juego es nuevo y simplemente se agrega
