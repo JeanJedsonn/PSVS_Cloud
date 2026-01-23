@@ -13,16 +13,16 @@ class JuegoMoneda extends Model
     use HasFactory;
 
     protected $fillable = [
-        'juego_id',
-        'moneda_id',
-        'idioma',
-        'precio_oferta',
-        'precio_original',
-        'precio_oferta_anterior',
-        'precio_original_anterior',
-        'subtitulos',
-        'audio',
-        'link',
+        'juego_id' => 'string',
+        'moneda_id' => 'string',
+        'idioma' => 'string',
+        'precio_oferta' => 'string',
+        'precio_original' => 'string',
+        'precio_oferta_anterior' => 'string',
+        'precio_original_anterior' => 'string',
+        'subtitulos' => 'string',
+        'audio' => 'string',
+        'link' => 'string',
     ];
 
     public function juego()

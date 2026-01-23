@@ -12,10 +12,10 @@ class Moneda extends Model
     use HasFactory;
 
     protected $fillable = [
-        'region',
-        'direccion',
-        'simbolo_moneda',
-        'tasa_usd',
+        'region' => 'string',
+        'direccion' => 'string',
+        'simbolo_moneda' => 'string',
+        'tasa_usd' => 'string',
     ];
 
     public function juegoMonedas()

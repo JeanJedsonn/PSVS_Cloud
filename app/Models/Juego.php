@@ -14,15 +14,15 @@ class Juego extends Model
     //public $incrementing = false;
     //protected $keyType = 'string';
     protected $fillable = [
-        'id',
-        'titulo',
-        'descripcion',
-        'plataforma',
-        'imgURL',
-        'imgLowURL',
-        'id_sony',
-        'oferta',
-        'importancia'
+        'id' => 'string',
+        'titulo' => 'string',
+        'descripcion' => 'string',
+        'plataforma' => 'string',
+        'imgURL' => 'string',
+        'imgLowURL' => 'string',
+        'id_sony' => 'string',
+        'oferta' => 'integer',
+        'importancia' => 'integer'
     ];
 
     public function monedas():HasManyThrough
