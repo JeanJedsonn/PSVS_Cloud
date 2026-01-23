@@ -14,7 +14,6 @@ class Juego extends Model
     //public $incrementing = false;
     //protected $keyType = 'string';
     protected $fillable = [
-        'id' => 'string',
         'titulo' => 'string',
         'descripcion' => 'string',
         'plataforma' => 'string',
