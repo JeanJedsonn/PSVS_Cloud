@@ -44,6 +44,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('visualizar') }}" class="nav-link {{ request()->routeIs('visualizar') ? 'active' : '' }}">
+                            👁️ Visualizar Tienda
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}" class="d-inline">
                             @csrf
                             <button type="submit" class="nav-link btn btn-link text-decoration-none" style="border: none; background: none;">
