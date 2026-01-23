@@ -99,7 +99,7 @@ class GuardarJuego
             #existe un titulo y mas de un codigo:
             if ($titulo->count() == 1 && $idSony->count() > 1) {
                 #comprobar que juegos tienen el mismo titulo y consola
-                $temp_juegos_titulo = $idSony->where('titulo', $consulta['titulo'])->where('plataforma', $consulta['consola'])->get();
+                $temp_juegos_titulo = $idSony->where('titulo', $consulta['titulo'])->where('plataforma', $consulta['consola']);
                 if ($temp_juegos_titulo->count() != 1) {
                     #Error de integridad
                     Log::error("route:Services/GuardarJuego.php> Error de integridad: {$consulta['titulo']} y {$consulta['consola']}");
@@ -114,7 +114,7 @@ class GuardarJuego
             }
             #existen mas de un titulo y un codigo: comprobar si algun titulo tiene ese codigo
             if ($titulo->count() > 1 && $idSony->count() == 1) {
-                $temp_juegos_titulo = $titulo->where('id_sony', $consulta['codigo'])->where('plataforma', $consulta['consola'])->get();
+                $temp_juegos_titulo = $titulo->where('id_sony', $consulta['codigo'])->where('plataforma', $consulta['consola']);
                 if ($temp_juegos_titulo->count() != 1) {
                     #Error de integridad
                     Log::error("route:Services/GuardarJuego.php> Error de integridad: {$consulta['titulo']} y {$consulta['consola']}");
@@ -140,7 +140,7 @@ class GuardarJuego
             #se espera encontrar a lo sumo dos juegos en este caso
             Log::info($titulo);
             dd($titulo);
-            $temp_juegos_consola = $titulo->where('consola', $consulta['consola'])->get();
+            $temp_juegos_consola = $titulo->where('consola', $consulta['consola']);
             if ($temp_juegos_consola->count() == 1) {
                 #se encontro el juego
                 $juegoExistente = $temp_juegos_consola->first()->id;
